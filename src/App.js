@@ -7,22 +7,24 @@ function App() {
   let [colors, setColors] = useState(['violet', 'lightblue', 'green', 'greenyellow', 'yellow', 'orange', 'red'])
 
   const addColor = (newColor) => {
-    setColors([...colors, newColor])
+    // checks to validate color entered is a recognized CSS color
+        if(CSS.supports("color", newColor)) {
+         setColors([...colors, newColor])
+
+      } else {
+        return setColors
+      }
   }
-  // let colorMap = colors.map((color, i) => {
-  //   return (
-  //     <ColorBlock key={i} color={color}/>
-  //   )
-  // })
 
   return (
     <div className="App">
       {colors.map((color, i) =>
         <ColorBlock key={i} color={color} />
-        )}
-        <ColorForm addColor={addColor} />
+      )}
+      <ColorForm addColor={addColor} />
     </div>
   );
+  
 }
 
 export default App;
