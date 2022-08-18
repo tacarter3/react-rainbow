@@ -12,15 +12,17 @@ function App() {
          setColors([...colors, newColor])
 
       } else {
-        return setColors
+        return colors
       }
   }
 
   return (
     <div className="App">
-      {colors.map((color, i) =>
-        <ColorBlock key={i} color={color} />
-      )}
+      <div className="container">
+        {colors.map((color, i) =>
+          <ColorBlock key={i} color={color} />
+        )}
+      </div>
       <ColorForm addColor={addColor} />
     </div>
   );

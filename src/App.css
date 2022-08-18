@@ -2,6 +2,19 @@
   text-align: center;
 }
 
-p {
-  margin: 0;
+.container {
+  display: flex;
+  margin-left: 13px;
+  margin-top: 5px;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.colorBlock {
+  border: solid 1px black;
+  width: 10em;
+}
+
+.input-box {
+  margin-top: 20px;
 }

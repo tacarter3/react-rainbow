@@ -4,15 +4,16 @@ function ColorForm(props) {
     let [input, setInput] = useState(" ")
 
     const handleSubmit = (e) => {
-        e.preventDefault()
         props.addColor(input)
-    }
+        e.preventDefault()
+        setInput(' ')
+    };
 
 
     return (
-        <div>
+        <div className="input-box">
             <form onSubmit={handleSubmit}>
-                <input type="text"
+                <input type="text" value={input}
                 onChange={ (e) => setInput(e.target.value) } />
                 <button type="submit">Submit!</button>
             </form>
